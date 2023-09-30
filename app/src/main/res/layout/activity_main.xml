@@ -4,15 +4,57 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/tierra"
     tools:context=".MainActivity">
 
+
     <TextView
+        android:id="@+id/textTitulo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:text="LAB 4 - IoT"
+        android:textColor="@color/white"
+        android:textSize="30dp"
+        tools:layout_editor_absoluteX="142dp"
+        tools:layout_editor_absoluteY="162dp" />
 
+    <TextView
+        android:id="@+id/textCreadoPor"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Creado por: 20192270"
+        tools:layout_editor_absoluteX="142dp"
+        tools:layout_editor_absoluteY="244dp" />
+
+    <TextView
+        android:id="@+id/textViewSensors"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Sensors"
+        tools:layout_editor_absoluteX="178dp"
+        tools:layout_editor_absoluteY="275dp" />
+
+    <TextView
+        android:id="@+id/textViewFragments"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Fragments"
+        tools:layout_editor_absoluteX="174dp"
+        tools:layout_editor_absoluteY="309dp" />
+
+    <TextView
+        android:id="@+id/textViewRecycle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="RecyclerView"
+        tools:layout_editor_absoluteX="177dp"
+        tools:layout_editor_absoluteY="341dp" />
+
+    <Button
+        android:id="@+id/buttonIngresar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Ingresar"
+        tools:layout_editor_absoluteX="158dp"
+        tools:layout_editor_absoluteY="443dp" />
 </androidx.constraintlayout.widget.ConstraintLayout>
