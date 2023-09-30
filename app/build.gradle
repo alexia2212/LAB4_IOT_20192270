@@ -3,6 +3,9 @@ plugins {
 }
 
 android {
+    buildFeatures {
+        viewBinding true
+    }
     namespace 'com.example.lab4_20192270'
     compileSdk 33
 
