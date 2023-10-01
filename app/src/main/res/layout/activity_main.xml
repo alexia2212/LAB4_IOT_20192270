@@ -15,46 +15,74 @@
         android:text="LAB 4 - IoT"
         android:textColor="@color/white"
         android:textSize="30dp"
-        tools:layout_editor_absoluteX="142dp"
-        tools:layout_editor_absoluteY="162dp" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.15"/>
 
     <TextView
         android:id="@+id/textCreadoPor"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Creado por: 20192270"
-        tools:layout_editor_absoluteX="142dp"
-        tools:layout_editor_absoluteY="244dp" />
+        android:textColor="@color/white"
+        android:textSize="19dp"
+        android:textStyle="italic"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.25" />
 
     <TextView
         android:id="@+id/textViewSensors"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Sensors"
-        tools:layout_editor_absoluteX="178dp"
-        tools:layout_editor_absoluteY="275dp" />
+        android:textColor="@color/white"
+        android:textSize="19dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.35" />
 
     <TextView
         android:id="@+id/textViewFragments"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Fragments"
-        tools:layout_editor_absoluteX="174dp"
-        tools:layout_editor_absoluteY="309dp" />
+        android:textColor="@color/white"
+        android:textSize="19dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.45" />
 
     <TextView
         android:id="@+id/textViewRecycle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="RecyclerView"
-        tools:layout_editor_absoluteX="177dp"
-        tools:layout_editor_absoluteY="341dp" />
+        android:textColor="@color/white"
+        android:textSize="19dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.55"/>
 
     <Button
         android:id="@+id/buttonIngresar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Ingresar"
-        tools:layout_editor_absoluteX="158dp"
-        tools:layout_editor_absoluteY="443dp" />
+        android:backgroundTint="@color/material_dynamic_primary30"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.68" />
 </androidx.constraintlayout.widget.ConstraintLayout>
