@@ -84,4 +84,12 @@ public class ListaMagneAdapter extends RecyclerView.Adapter<ListaMagneAdapter.Ma
     public void setContext(Context context) {
         this.context = context;
     }
+
+    public PersonasMagneViewModel getPersonasMagneViewModel() {
+        return personasMagneViewModel;
+    }
+
+    public void setPersonasMagneViewModel(PersonasMagneViewModel personasMagneViewModel) {
+        this.personasMagneViewModel = personasMagneViewModel;
+    }
 }

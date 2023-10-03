@@ -67,13 +67,13 @@ public class MagnetometroFragment extends Fragment implements SensorEventListene
         NavController navController = NavHostFragment.findNavController(MagnetometroFragment.this);
         personasMagneViewModel.getListaPersonasMagne().observe(this,lista->{
 
-            //listaMagneAdapter = new ListaMagnetAdapter();
-            //listaMagneAdapter.setContext(getContext());
-            //listaMagneAdapter.setListaMagnet(lista);
-            //listaMagneAdapter.setPersonasMagnetometroVM(personasMagnetometroVM);
-            //binding.recyclerMagnet.setAdapter(listaMagnetAdapter);
-            //LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getContext());
-            //binding.recyclerMagnet.setLayoutManager(linearLayoutManager);
+            listaMagneAdapter = new ListaMagneAdapter();
+            listaMagneAdapter.setContext(getContext());
+            listaMagneAdapter.setListaMagnet(lista);
+            listaMagneAdapter.setPersonasMagneViewModel(personasMagneViewModel);
+            binding.recyclerMagnet.setAdapter(listaMagneAdapter);
+            LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getContext());
+            binding.recyclerMagnet.setLayoutManager(linearLayoutManager);
 
         });
 
@@ -82,7 +82,29 @@ public class MagnetometroFragment extends Fragment implements SensorEventListene
 
     @Override
     public void onSensorChanged(SensorEvent sensorEvent) {
-
+        if (sensorEvent.sensor.getType() == Sensor.TYPE_ACCELEROMETER) {
+            System.arraycopy(sensorEvent.values, 0, accelerometerReading, 0, accelerometerReading.length);
+        } else if (sensorEvent.sensor.getType() == Sensor.TYPE_MAGNETIC_FIELD) {
+            System.arraycopy(sensorEvent.values, 0, magnetometerReading, 0, magnetometerReading.length);
+        }
+        SensorManager.getRotationMatrix(rotationMatrix, null, accelerometerReading, magnetometerReading);
+        SensorManager.getOrientation(rotationMatrix, orientationAngles);
+        float azimuthInDegress = Math.abs((float) Math.toDegrees(orientationAngles[0]));
+        float startAngle = 0.0f;
+        float endAngle = 180.0f;
+        float opacity = 1.0f;
+        if (azimuthInDegress >= startAngle && azimuthInDegress <= endAngle) {
+            float range = endAngle - startAngle;
+            float adjustedAngle = azimuthInDegress - startAngle;
+            opacity = 1.0f - (adjustedAngle / range);
+        }
+        binding.recyclerMagnet.setAlpha(opacity);
+    }
+    @Override
+    public void onStop(){
+        super.onStop();
+        SensorManager sensorManager = (SensorManager) requireActivity().getSystemService(SENSOR_SERVICE);
+        sensorManager.unregisterListener(this);
     }
 
     @Override
