@@ -13,7 +13,7 @@
         android:layout_height="600dp"
         app:defaultNavHost="true"
         app:layout_constraintTop_toTopOf="parent"
-        app:navGraph="@navigation/nav_graph" />
+        app:navGraph="@navigation/nave_graph" />
 
     <Button
         android:id="@+id/buttonMagnetometro"

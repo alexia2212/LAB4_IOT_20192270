@@ -21,6 +21,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.example.lab4_20192270.DTO.Service;
+import com.example.lab4_20192270.R;
 import com.example.lab4_20192270.VistaFramgnetoViewModel;
 import com.example.lab4_20192270.databinding.FragmentMagnetometroBinding;
 
@@ -30,7 +31,7 @@ import retrofit2.converter.gson.GsonConverterFactory;
 public class MagnetometroFragment extends Fragment implements SensorEventListener {
 
     FragmentMagnetometroBinding binding;
-    private VistaFramgnetoViewModel vistaVM;
+    private VistaFramgnetoViewModel vistaFramgnetoViewModel;
     private ListaMagneAdapter listaMagneAdapter;
     private PersonasMagneViewModel personasMagneViewModel;
     private Sensor accelerometer;
@@ -43,7 +44,7 @@ public class MagnetometroFragment extends Fragment implements SensorEventListene
     @Override
     public void onCreate(Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
-        vistaVM = new ViewModelProvider(requireActivity()).get(VistaFramgnetoViewModel.class);
+        vistaFramgnetoViewModel = new ViewModelProvider(requireActivity()).get(VistaFramgnetoViewModel.class);
         personasMagneViewModel = new ViewModelProvider(requireActivity()).get(PersonasMagneViewModel.class);
     }
 
@@ -77,6 +78,12 @@ public class MagnetometroFragment extends Fragment implements SensorEventListene
 
         });
 
+        vistaFramgnetoViewModel.getVistaActual().observe(this, vistaActual->{
+            Log.i("MagnetometroFragment", "Valor observado: " + vistaActual);
+            if (vistaActual.equals("Acelerómetro")){
+                navController.navigate(R.id.action_magnetometroFragment2_to_acelerometroFragment2);
+            }
+        });
         return binding.getRoot();
     }
 

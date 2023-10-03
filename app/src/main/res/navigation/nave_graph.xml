@@ -2,30 +2,25 @@
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/nav_graph"
-    app:startDestination="@id/acelerometroFragment">
+    android:id="@+id/nave_graph"
+    app:startDestination="@id/acelerometroFragment2">
 
     <fragment
-        android:id="@+id/acelerometroFragment"
+        android:id="@+id/acelerometroFragment2"
         android:name="com.example.lab4_20192270.Acelerometro.AcelerometroFragment"
         android:label="fragment_acelerometro"
         tools:layout="@layout/fragment_acelerometro" >
         <action
-            android:id="@+id/action_acelerometroFragment_to_magnetometroFragment"
-            app:destination="@id/magnetometroFragment"
-            app:popUpToInclusive="true"
-            app:popUpTo="@id/magnetometroFragment"/>
+            android:id="@+id/action_acelerometroFragment2_to_magnetometroFragment2"
+            app:destination="@id/magnetometroFragment2" />
     </fragment>
     <fragment
-        android:id="@+id/magnetometroFragment"
+        android:id="@+id/magnetometroFragment2"
         android:name="com.example.lab4_20192270.Magnetometro.MagnetometroFragment"
         android:label="fragment_magnetometro"
         tools:layout="@layout/fragment_magnetometro" >
         <action
-            android:id="@+id/action_magnetometroFragment_to_acelerometroFragment"
-            app:destination="@id/acelerometroFragment"
-            app:popUpToInclusive="true"
-            app:popUpTo="@id/magnetometroFragment"/>
+            android:id="@+id/action_magnetometroFragment2_to_acelerometroFragment2"
+            app:destination="@id/acelerometroFragment2" />
     </fragment>
-
 </navigation>
