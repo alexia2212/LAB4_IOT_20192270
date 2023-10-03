@@ -68,9 +68,9 @@ public class AcelerometroFragment extends Fragment implements SensorEventListene
             listaAcelearoAdapter.setListaAceler(lista);
             listaAcelearoAdapter.setPersonasAcelerometroVM(personasAcelerometroVM);
 
-            //binding.recyclerAceler.setAdapter(listaAcelearoAdapter);
+            binding.recyclerAceler.setAdapter(listaAcelearoAdapter);
             LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getContext());
-            //binding.recyclerAceler.setLayoutManager(linearLayoutManager);
+            binding.recyclerAceler.setLayoutManager(linearLayoutManager);
 
         });
 
@@ -94,9 +94,9 @@ public class AcelerometroFragment extends Fragment implements SensorEventListene
                     Math.pow(sensorEvent.values[2],2));
             if (aceleracion_total>15.0){
                 Toast.makeText(requireActivity(), String.valueOf(decifmalf.format(aceleracion_total))+" m/s^2", Toast.LENGTH_SHORT).show();
-                //int itemCount = binding.recyclerAceler.getAdapter().getItemCount();
-                //if (itemCount>0)
-                    //binding.recyclerAceler.smoothScrollToPosition(itemCount-1);
+                int itemCount = binding.recyclerAceler.getAdapter().getItemCount();
+                if (itemCount>0)
+                    binding.recyclerAceler.smoothScrollToPosition(itemCount-1);
             }
         }
     }
