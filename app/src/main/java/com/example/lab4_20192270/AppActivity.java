@@ -37,12 +37,17 @@ public class AppActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         binding = ActivityAppBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
+
         VistaFramgnetoViewModel vistaFramgnetoViewModel = new ViewModelProvider(AppActivity.this).get(VistaFramgnetoViewModel.class);
+
         PersonasMagneViewModel personasMagneViewModel = new ViewModelProvider(AppActivity.this).get(PersonasMagneViewModel.class);
+        personasMagneViewModel.getListaPersonasMagne().postValue(new ArrayList<>());
+
         PersonasAcelerometroVM personasAcelerometroVM = new ViewModelProvider(AppActivity.this).get(PersonasAcelerometroVM.class);
         personasAcelerometroVM.getListaPersonasAcelero().postValue(new ArrayList<>());
-        personasMagneViewModel.getListaPersonasMagne().postValue(new ArrayList<>());
+
         vistaFramgnetoViewModel.getVistaActual().postValue("Inicio");
+
         binding.buttonMagnetometro.setOnClickListener(view -> {
             if(binding.buttonMagnetometro.getText().toString().equals(textAcelerometro)){
                 vistaFramgnetoViewModel.getVistaActual().postValue("Acelerómetro");
@@ -54,12 +59,10 @@ public class AppActivity extends AppCompatActivity {
         });
 
         binding.imageView.setOnClickListener(view -> {
-            Log.d("msg-test-nombre"," "+binding.buttonMagnetometro.getText().toString());
+            Log.d("msg-test-nombre"," " + binding.buttonMagnetometro.getText().toString());
             if (binding.buttonMagnetometro.getText().toString().equals(""+textMagnetometro)){
-                // Estoy en el Acelerómetro
                 mostrarAlertaAcelerometro();
             }else{
-                // Estoy en el Magnetómetro
                 mostrarAlertaMagnetometro();
             }
         });
@@ -68,7 +71,6 @@ public class AppActivity extends AppCompatActivity {
             binding.buttonAnadir.setEnabled(false);
             binding.buttonMagnetometro.setEnabled(false);
             if (binding.buttonMagnetometro.getText().toString().equals(textMagnetometro)){
-                // Estoy en el Acelerómetro
                 servicio.random().enqueue(new Callback<Result>() {
                     @Override
                     public void onResponse(Call<Result> call, Response<Result> response) {
@@ -87,7 +89,6 @@ public class AppActivity extends AppCompatActivity {
                 });
 
             }else{
-                // Estoy en el magnetómetro
                 servicio.random().enqueue(new Callback<Result>() {
                     @Override
                     public void onResponse(Call<Result> call, Response<Result> response) {
