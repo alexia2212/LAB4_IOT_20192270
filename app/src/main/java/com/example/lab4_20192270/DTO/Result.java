@@ -1,10 +1,15 @@
 package com.example.lab4_20192270.DTO;
 
-import java.util.ArrayList;
+import java.util.List;
 
 public class Result {
-    public ArrayList<User> getResults() {
+    private List<User> results;
+
+    public List<User> getResults() {
         return results;
     }
-    private ArrayList<User> results;
+
+    public void setResults(List<User> results) {
+        this.results = results;
+    }
 }

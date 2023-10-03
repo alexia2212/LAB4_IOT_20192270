@@ -17,9 +17,5 @@ public class AppActivity extends AppCompatActivity {
         setContentView(binding.getRoot());
         VistaFramgnetoViewModel vistaFramgnetoViewModel = new ViewModelProvider(AppActivity.this).get(VistaFramgnetoViewModel.class);
 
-        binding.buttonMagnetometro.setOnClickListener(view -> {
-            vistaFramgnetoViewModel.getFragmentoActual().setValue("Magnetómetro");
-            Log.d("Cambio", "CAMBIO DE VISTA");
-        });
     }
 }

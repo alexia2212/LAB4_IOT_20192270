@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/acelerometroFragment"
-        android:name="com.example.lab4_20192270.AcelerometroFragment"
+        android:name="com.example.lab4_20192270.Acelerometro.AcelerometroFragment"
         android:label="fragment_acelerometro"
         tools:layout="@layout/fragment_acelerometro" >
         <action
@@ -18,7 +18,7 @@
     </fragment>
     <fragment
         android:id="@+id/magnetometroFragment"
-        android:name="com.example.lab4_20192270.MagnetometroFragment"
+        android:name="com.example.lab4_20192270.Magnetometro.MagnetometroFragment"
         android:label="fragment_magnetometro"
         tools:layout="@layout/fragment_magnetometro" >
         <action

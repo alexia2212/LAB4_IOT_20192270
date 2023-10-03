@@ -5,7 +5,7 @@
     android:id="@+id/acelerometroLayout"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    tools:context=".AcelerometroFragment">
+    tools:context=".Acelerometro.AcelerometroFragment">
 
     <TextView
         android:id="@+id/textView"
