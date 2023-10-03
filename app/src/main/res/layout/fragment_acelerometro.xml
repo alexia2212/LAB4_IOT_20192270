@@ -23,8 +23,7 @@
         android:id="@+id/recyclerAceler"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginTop="48dp"
         app:layout_constraintTop_toTopOf="@id/textView"
-        tools:layout_editor_absoluteX="0dp" />
+        android:layout_marginTop="82dp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

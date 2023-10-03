@@ -25,6 +25,6 @@
             android:id="@+id/action_magnetometroFragment_to_acelerometroFragment"
             app:destination="@id/acelerometroFragment"
             app:popUpToInclusive="true"
-            app:popUpTo="@id/acelerometroFragment"/>
+            app:popUpTo="@id/magnetometroFragment"/>
     </fragment>
 </navigation>
