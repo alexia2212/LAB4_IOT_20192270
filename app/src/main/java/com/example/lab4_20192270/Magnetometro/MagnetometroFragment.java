@@ -80,7 +80,7 @@ public class MagnetometroFragment extends Fragment implements SensorEventListene
 
         vistaFramgnetoViewModel.getVistaActual().observe(this, vistaActual->{
             Log.i("MagnetometroFragment", "Valor observado: " + vistaActual);
-            if (vistaActual.equals("Acelerómetro")){
+            if (vistaActual.equals("Magnetómetro")){
                 navController.navigate(R.id.action_magnetometroFragment2_to_acelerometroFragment2);
             }
         });
